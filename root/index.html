@@ -4,15 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/navbar.css">
-    <script src="../javascript/navresponse.js"></script>
+    <link rel="stylesheet" href="../css/design.css">
+    <link rel="stylesheet" href="../css/books.css">
     <title>Home</title>
 </head>
 <body>
-    <div class="topnav">
+    <div class="topnav" id="myTopnav">
         <a class="active" href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            &#9776;
+        </a>
       </div>
-    
+
+    <div class="toKillAMockingBird">
+        <img src="../image/tokillamockingbird.jpg" alt="To Kill A Mocking Bird">
+        <div class="book-description">
+            <p><em>To Kill a Mockingbird</em> is set in the racially charged American South during the Great Depression. It follows young Scout and her older brother, Jem, as they come of age in a town steeped in prejudice. When their father, Atticus Finch—a principled lawyer—is appointed to defend a Black man falsely accused of raping a white woman, the children are forced to confront the harsh realities of racism, injustice, and moral courage. Through their eyes, the novel explores themes of innocence, empathy, and the struggle between right and wrong.</p>
+            <button class="pay-button" onclick="window.location.href='pay.html'">Pay</button>
+        </div>
+    </div>
+      <script src="../javascript/navresponse.js"></script>
 </body>
 </html>
