@@ -1,40 +1,79 @@
-.toKillAMockingBird {
-    display: flex;
-    border:#333;
-    align-items: flex-start;
-    gap: 20px;
-    margin: 5% 10%;
-  }
-
-.toKillAMockingBird img {
-    height: 20%;
-    width: 20%;
-    display: block;
+/* Flex container holding all the books horizontally */
+.book-row {
+  display: flex;
+  justify-content: space-between; /* Even spacing */
+  gap: 40px;
+  flex-wrap: wrap; /* Allows wrap on smaller screens */
+  margin: 5% 10%;
 }
 
+.title {
+  text-decoration: underline;
+}
+
+/* Shared book block style */
+.book-block {
+  display: flex;
+  align-items: flex-start; /* aligns image & text at the top */
+  gap: 20px;
+  border: 1px solid #333;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #1e1e1e;
+}
+
+/* Book images */
+.book-block img {
+  max-width: 150px;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+  cursor: zoom-in;
+}
+
+/* Description styling */
 .book-description {
-    max-width: 200px;
-    padding: 10px;
-    border-radius: 10px;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: white;
-    font-size: 85%;
-    background-color: #333;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 75%;
+  background-color: #333;
+  color: white;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Payment button */
+.pay-button {
+  background-color: #f72b57;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 90%;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.pay-button:hover {
+  background-color: #b1193a;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+  .book-row {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .pay-button {
-    background-color: #f72b57;
-    color: white;
-    padding: 10px 20px;
-    border:#333;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 90%;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
+  .book-block {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
-  
-  .pay-button:hover {
-    background-color: #b1193a;
+
+  .book-description {
+    max-width: 90%;
   }
+}
