@@ -17,5 +17,29 @@
         </a>
       </div>
       <script src="../javascript/navresponse.js"></script>
+
+      <div class="card-info">
+        <h1 class="checkout">Checkout</h1>
+        <form action="thankyou.html" method="post">
+            <label>Name: </label>
+            <input title="cardName" type="text" name="cardName" pattern="[A-Za-z\s]{2,}" required>
+
+            <label>Card Number: </label>
+            <input title="cardNumber" type="text" name="cardNumber" pattern="\d{16}" required>
+
+            <label>Expiry Date: </label>
+            <input title="ExpiryDate" type="text" name="expiry" placeholder="MM/YY" pattern="(0[1-9]|1[0-2])\/\d{2}" maxlength="5" required>
+
+            <label>CVV: </label>
+            <input title="CVV" type="text" name="CVV" pattern="\d{3,4}" required>
+
+            <label>Email: </label>
+            <input title="email" type="email" name="email" required>
+
+            <button title="submit" type="submit" class="pay-btn">Pay</button>
+        </form>
+      </div>
+
 </body>
+<script src="../javascript/payment.js"></script>
 </html>
