@@ -50,4 +50,39 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
   });
+
+document.querySelector('.credit-form').addEventListener('submit', async function(event) {
+  event.preventDefault(); // Stop the default form submission
+
+  // Gather the form data
+  const formData = {
+    cardName: document.querySelector('input[name="cardName"]').value,
+    cardNumber: document.querySelector('input[name="cardNumber"]').value,
+    expiry: document.querySelector('input[name="expiry"]').value,
+    CVV: document.querySelector('input[name="CVV"]').value,
+    email: document.querySelector('input[name="email"]').value
+  };
+
+  try {
+    // Send POST request
+    const response = await fetch('https://mudfoot.doc.stu.mmu.ac.uk/node/api/creditcard', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+
+    if (response.ok) {
+      // If the server responds successfully
+      window.location.href = 'thankyou.html'; // Redirect to thank you page
+    } else {
+      alert('Error submitting payment. Please try again.');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Network error. Please try again.');
+  }
+});
+
   
